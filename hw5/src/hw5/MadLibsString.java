@@ -13,7 +13,6 @@ public class MadLibsString implements MadLibsDecorator {
 
     @Override
     public String decorateString() {
-        // TODO Auto-generated method stub
         return string;
     }
 

@@ -12,11 +12,11 @@ public class VerbReplacementDecorator implements MadLibsDecorator {
     @Override
     public String decorateString() {
         String rv = mlDecorator.decorateString();
-        String last = new String(rv);
+        String last = "";
         
         while (!rv.equals(last) ) {
-            last = new String(rv);
-            rv.replaceFirst("<verb>", verbs[index]);
+            last = rv;
+            rv = rv.replaceFirst("<verb>", verbs[index]);
             index = (index == verbs.length - 1) ? 0 : index + 1;
         }
         

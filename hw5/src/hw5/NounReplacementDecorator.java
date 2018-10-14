@@ -12,11 +12,11 @@ public class NounReplacementDecorator implements MadLibsDecorator {
     @Override
     public String decorateString() {
         String rv = mlDecorator.decorateString();
-        String last = new String(rv);
+        String last = "";
         
         while (!rv.equals(last) ) {
-            last = new String(rv);
-            rv.replaceFirst("<noun>", nouns[index]);
+            last = rv;
+            rv = rv.replaceFirst("<noun>", nouns[index]);
             index = (index == nouns.length - 1) ? 0 : index + 1;
         }
         
